@@ -10,6 +10,9 @@
 
 @interface FirstViewController : UIViewController
 
+@property IBOutlet UIBarButtonItem *qrcodeBarButtonItem;
 
+
+-(IBAction)lanuchQrcode:(id)sender;
 @end
 

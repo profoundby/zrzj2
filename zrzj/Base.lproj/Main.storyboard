@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A282a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kJk-ex-z80">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kJk-ex-z80">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Main Tab Bar View Controller-->
@@ -20,21 +21,12 @@
                         <segue destination="v3L-HC-vre" kind="relationship" relationship="viewControllers" id="ZhB-Gw-ben"/>
                         <segue destination="dVi-2j-NHQ" kind="relationship" relationship="viewControllers" id="kmp-PS-LVI"/>
                         <segue destination="hps-l3-3g3" kind="relationship" relationship="viewControllers" id="Ugo-jT-96C"/>
+                        <segue destination="Cs9-su-SJZ" kind="relationship" relationship="viewControllers" id="YmE-97-TGt"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
-        </scene>
-        <!--Root View Controller-->
-        <scene sceneID="w5t-Zo-qLi">
-            <objects>
-                <tableViewController id="LwJ-r6-Oin" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="Root View Controller" id="cgU-li-6VK"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jRO-pb-0Yb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1481" y="-676"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="7N4-Uc-AfA">
@@ -94,11 +86,57 @@
             </objects>
             <point key="canvasLocation" x="1487" y="751"/>
         </scene>
-        <!--Item-->
+        <!--Root View Controller-->
+        <scene sceneID="dOZ-qV-Wz5">
+            <objects>
+                <tableViewController id="iZS-Dn-Pw6" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="snh-jb-V4F">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Jzg-7E-l5e">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jzg-7E-l5e" id="8fP-4n-wuM">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="iZS-Dn-Pw6" id="qR5-qy-uMm"/>
+                            <outlet property="delegate" destination="iZS-Dn-Pw6" id="UFq-g9-Y0S"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="XPf-5d-fLs"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="efM-P1-AEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1648" y="1425"/>
+        </scene>
+        <!--设置-->
+        <scene sceneID="wYM-e3-Mgw">
+            <objects>
+                <navigationController id="Cs9-su-SJZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="设置" image="my" id="blk-nJ-ofu"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ODp-rF-HCr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="iZS-Dn-Pw6" kind="relationship" relationship="rootViewController" id="uHq-Zn-4fU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VRB-Yt-NMB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="828" y="1425"/>
+        </scene>
+        <!--朋友圈-->
         <scene sceneID="JAr-Hp-oab">
             <objects>
                 <navigationController id="hps-l3-3g3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="pIk-bZ-7ua"/>
+                    <tabBarItem key="tabBarItem" title="朋友圈" image="friends" id="pIk-bZ-7ua"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="19M-rs-SFs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -109,13 +147,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8QL-od-P3i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="777" y="751"/>
+            <point key="canvasLocation" x="840" y="735"/>
         </scene>
-        <!--Item-->
+        <!--提醒-->
         <scene sceneID="ZFT-Pg-ccZ">
             <objects>
                 <navigationController id="dVi-2j-NHQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="g22-db-FXH"/>
+                    <tabBarItem key="tabBarItem" title="提醒" image="alarm" id="g22-db-FXH"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="t0J-Fd-UkD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -170,25 +208,64 @@
             </objects>
             <point key="canvasLocation" x="105.5" y="-1034.5"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--首页-->
         <scene sceneID="L0b-e9-foL">
             <objects>
                 <navigationController id="v3L-HC-vre" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="yWU-h9-UnI"/>
+                    <tabBarItem key="tabBarItem" title="首页" image="home" selectedImage="home" id="yWU-h9-UnI"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cZe-Rl-vpo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="LwJ-r6-Oin" kind="relationship" relationship="rootViewController" id="g8F-If-tq3"/>
+                        <segue destination="X0C-b9-pTK" kind="relationship" relationship="rootViewController" id="0gE-JI-XYC"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L4v-2x-ieF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="763" y="-676"/>
         </scene>
+        <!--我的自然-->
+        <scene sceneID="uyk-B6-wx3">
+            <objects>
+                <viewController title="我的自然" id="X0C-b9-pTK" customClass="FirstViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N1h-1q-Wqh"/>
+                        <viewControllerLayoutGuide type="bottom" id="gl5-Hl-Pjs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="p8j-1g-POg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="我的自然" id="ZlU-Pk-lta">
+                        <leftBarButtonItems>
+                            <barButtonItem image="location" id="fyu-uW-S9r"/>
+                            <barButtonItem title="常州市" id="PhY-yB-xcU"/>
+                        </leftBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" image="qcode" id="jX9-ND-vgG">
+                            <connections>
+                                <action selector="lanuchQrcode:" destination="X0C-b9-pTK" id="8wF-dO-V2z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="qrcodeBarButtonItem" destination="jX9-ND-vgG" id="Trj-tO-9Or"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="izr-50-80Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1422" y="-676"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Login" width="750" height="1334"/>
+        <image name="alarm" width="25" height="25"/>
+        <image name="friends" width="25" height="25"/>
+        <image name="home" width="25" height="25"/>
+        <image name="location" width="22" height="22"/>
+        <image name="my" width="25" height="25"/>
+        <image name="qcode" width="22" height="22"/>
     </resources>
+    <color key="tintColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>LxGridView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-zrzj.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,7 +27,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C697F010A008DF6D41234A9A67D71245</key>
+		<key>67378D5A9BF3DDB0FABAF8D89B6D8FBB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E60D0779649192F333B93D06D9862F02</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -20,19 +20,22 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - LxGridView (1.0.0)
   - MOBFoundation_IDFA (1.5.1)
   - SMSSDK (2.0.4)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - LxGridView (~> 1.0.0)
   - MOBFoundation_IDFA
   - SMSSDK
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  LxGridView: af7b9360cce8eec2bcb11aa9d3cb7b9674372b74
   MOBFoundation_IDFA: f5d3d1f89166f60c6985e34b7d90e6fb5d58fb61
   SMSSDK: 642b6a8c55fd382be44487cd5e0b0710681895f9
 
-PODFILE CHECKSUM: 379186a8051470fe0812b12270d89436708d9751
+PODFILE CHECKSUM: 863b6f607987ed4649218242937f0b883869eaff
 
-COCOAPODS: 1.0.0.beta.6
+COCOAPODS: 1.0.0.beta.7
