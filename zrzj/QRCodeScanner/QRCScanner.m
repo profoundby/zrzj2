@@ -4,7 +4,7 @@
 //
 //  Created by zhangfei on 15/10/15.
 //  Copyright © 2015年 zhangfei. All rights reserved.
-//
+//  https://git.coding.net/hging/Specs.git
 
 #import "QRCScanner.h"
 #import <AVFoundation/AVFoundation.h>
@@ -103,7 +103,7 @@
     CGSize transparentArea = _transparentAreaSize;
     //中间清空的矩形框
     _clearDrawRect = CGRectMake(screenDrawRect.size.width / 2 - transparentArea.width / 2,
-                                      screenDrawRect.size.height / 2 - transparentArea.height / 2 -60 ,
+                                      screenDrawRect.size.height / 2 - transparentArea.height / 2-60,
                                       transparentArea.width,transparentArea.height);
     
     CGContextRef ctx = UIGraphicsGetCurrentContext();
@@ -210,7 +210,7 @@
     CGRect readerFrame = self.frame;
     CGSize viewFinderSize = _clearDrawRect.size;
     CGRect scanLineframe = self.scanLine.frame;
-    scanLineframe.origin.y = (readerFrame.size.height - viewFinderSize.height)/2;
+    scanLineframe.origin.y = (readerFrame.size.height - viewFinderSize.height)/2-60;
     self.scanLine.frame = scanLineframe;
     self.scanLine.hidden = NO;
     __weak __typeof(self) weakSelf = self;
@@ -219,7 +219,7 @@
                          CGRect scanLineframe = weakSelf.scanLine.frame;
                          scanLineframe.origin.y =
                          (readerFrame.size.height + viewFinderSize.height)/2 -
-                         weakSelf.scanLine.frame.size.height;
+                         weakSelf.scanLine.frame.size.height-60;
                          weakSelf.scanLine.frame = scanLineframe;
                      }
                      completion:^(BOOL finished) {
@@ -295,7 +295,7 @@
     //_output.metadataObjectTypes =@[AVMetadataObjectTypeQRCode];
     
     //增加条形码扫描
-   /* _output.metadataObjectTypes = @[AVMetadataObjectTypeEAN13Code,
+    /*_output.metadataObjectTypes = @[AVMetadataObjectTypeEAN13Code,
                                     AVMetadataObjectTypeEAN8Code,
                                     AVMetadataObjectTypeCode128Code,
                                     AVMetadataObjectTypeQRCode];*/

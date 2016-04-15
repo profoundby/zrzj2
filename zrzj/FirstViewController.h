@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface FirstViewController : UIViewController <UICollectionViewDelegate,UICollectionViewDataSource>
 
-@property IBOutlet UIBarButtonItem *qrcodeBarButtonItem;
-
+@property (weak,nonatomic) IBOutlet UIBarButtonItem *qrcodeBarButtonItem;
+@property (weak,nonatomic) IBOutlet UICollectionView *plantCollectionView;
 
 -(IBAction)lanuchQrcode:(id)sender;
 @end

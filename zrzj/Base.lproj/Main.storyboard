@@ -181,8 +181,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Login" translatesAutoresizingMaskIntoConstraints="NO" id="S93-BE-lGx">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yGr-vf-Cv2">
-                                <rect key="frame" x="319" y="628" width="51" height="31"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yGr-vf-Cv2">
+                                <rect key="frame" x="323" y="628" width="51" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="ExS-z4-9v6"/>
                                     <constraint firstAttribute="width" constant="49" id="zEN-Q4-Tow"/>
@@ -236,7 +236,57 @@
                     <view key="view" contentMode="scaleToFill" id="p8j-1g-POg">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fVF-TI-Dud">
+                                <rect key="frame" x="0.0" y="64" width="600" height="250"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="cTs-Tf-gwH"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eXP-wp-ez4">
+                                    <size key="itemSize" width="80" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="plantcell" id="VTx-Ap-ncq" customClass="PlantCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="64" width="80" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hZ7-SA-RQK">
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFG-Zs-mcP">
+                                                    <rect key="frame" x="0.0" y="80" width="80" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <outlet property="plantImageView" destination="hZ7-SA-RQK" id="Fe0-yW-2J0"/>
+                                            <outlet property="plantLabel" destination="rFG-Zs-mcP" id="Y9b-dV-dtN"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="X0C-b9-pTK" id="R78-yP-GH9"/>
+                                    <outlet property="delegate" destination="X0C-b9-pTK" id="xjy-Hm-65D"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fVF-TI-Dud" firstAttribute="leading" secondItem="p8j-1g-POg" secondAttribute="leading" id="Px3-au-aRh"/>
+                            <constraint firstAttribute="trailing" secondItem="fVF-TI-Dud" secondAttribute="trailing" id="iKK-Yq-4f4"/>
+                            <constraint firstItem="fVF-TI-Dud" firstAttribute="top" secondItem="N1h-1q-Wqh" secondAttribute="bottom" id="osv-WQ-QsM"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="我的自然" id="ZlU-Pk-lta">
                         <leftBarButtonItems>
@@ -250,6 +300,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="plantCollectionView" destination="fVF-TI-Dud" id="cdS-Sg-nQL"/>
                         <outlet property="qrcodeBarButtonItem" destination="jX9-ND-vgG" id="Trj-tO-9Or"/>
                     </connections>
                 </viewController>
