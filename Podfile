@@ -5,4 +5,5 @@ pod "AFNetworking", "~> 2.0"
 pod 'MOBFoundation_IDFA'
 pod 'SMSSDK'
 pod 'LxGridView', '~> 1.0.0'
+pod 'DFCommon', '~> 1.3.9'
 end 

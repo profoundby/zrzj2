@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kJk-ex-z80">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A282a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kJk-ex-z80">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -57,34 +57,24 @@
             </objects>
             <point key="canvasLocation" x="1487" y="0.0"/>
         </scene>
-        <!--Root View Controller-->
-        <scene sceneID="rH5-ov-Ahl">
+        <!--Time Line View Controller-->
+        <scene sceneID="Zs7-v2-v0q">
             <objects>
-                <tableViewController id="sdI-on-6iy" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="mbk-HM-2YZ">
+                <viewController id="HcO-pZ-HJM" customClass="TimeLineViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gDJ-q2-Y9G"/>
+                        <viewControllerLayoutGuide type="bottom" id="l1B-lb-ffQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="v7C-mH-A9o">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="qLe-4W-cl3">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qLe-4W-cl3" id="hm8-PE-Nla">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="sdI-on-6iy" id="onN-b8-8be"/>
-                            <outlet property="delegate" destination="sdI-on-6iy" id="Z5y-eZ-CQ5"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="KUX-wB-n2s"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ee0-Hu-rzG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5oB-id-hIw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QVe-0o-UWz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1487" y="751"/>
+            <point key="canvasLocation" x="1574" y="733"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="dOZ-qV-Wz5">
@@ -113,7 +103,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="efM-P1-AEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1648" y="1425"/>
+            <point key="canvasLocation" x="1580" y="1425"/>
         </scene>
         <!--设置-->
         <scene sceneID="wYM-e3-Mgw">
@@ -135,6 +125,7 @@
         <!--朋友圈-->
         <scene sceneID="JAr-Hp-oab">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8QL-od-P3i" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="hps-l3-3g3" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="朋友圈" image="friends" id="pIk-bZ-7ua"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="19M-rs-SFs">
@@ -142,10 +133,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="sdI-on-6iy" kind="relationship" relationship="rootViewController" id="wom-eg-5d3"/>
+                        <segue destination="HcO-pZ-HJM" kind="relationship" relationship="rootViewController" id="5Yg-n2-zXS"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8QL-od-P3i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="840" y="735"/>
         </scene>
@@ -270,8 +260,8 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <outlet property="plantImageView" destination="hZ7-SA-RQK" id="Fe0-yW-2J0"/>
-                                            <outlet property="plantLabel" destination="rFG-Zs-mcP" id="Y9b-dV-dtN"/>
+                                            <outlet property="plantImageView" destination="hZ7-SA-RQK" id="DJl-4t-2XE"/>
+                                            <outlet property="plantLabel" destination="rFG-Zs-mcP" id="Jpt-fy-eVV"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

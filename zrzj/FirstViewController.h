@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController <UICollectionViewDelegate,UICollectionViewDataSource>
+@interface FirstViewController : UIViewController <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (weak,nonatomic) IBOutlet UIBarButtonItem *qrcodeBarButtonItem;
 @property (weak,nonatomic) IBOutlet UICollectionView *plantCollectionView;
